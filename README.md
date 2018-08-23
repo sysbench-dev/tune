@@ -12,6 +12,13 @@ personal experience with a particular set of benchmarks, but the goal is
 to expand it to work for other software, hardware and operating systems
 combinations in the future.
 
+# Installation
+
+The easiest way is to install from [SysbenchRocks](http://rocks.sysbench.io/modules/akopytov/tune):
+```
+luarocks install --server=http://rocks.sysbench.io tune
+```
+
 # Usage
 
 ```
