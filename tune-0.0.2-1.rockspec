@@ -1,5 +1,5 @@
 package = "tune"
-version = "0.0.1-1"
+version = "0.0.2-1"
 
 description = {
   summary = "Tune hardware and OS to improve benchmark stability",
@@ -15,8 +15,8 @@ combinations in the future.]],
 }
 
 source = {
-  url = "https://github.com/sysbench-dev/tune/archive/0.0.1.tar.gz",
-  file = "tune-0.0.1.tar.gz"
+  url = "https://github.com/sysbench-dev/tune/archive/0.0.2.tar.gz",
+  file = "tune-0.0.2.tar.gz"
 }
 
 dependencies = {
