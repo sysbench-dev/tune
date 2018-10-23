@@ -75,7 +75,7 @@ local function disable_turbo()
   if f then
     f:write("1")
     f:close()
-  elseif pexec("which wrmsr > /dev/null 2>&1") == 0 then
+  elseif pexec("which wrmsr > /dev/null 2>&1") then
     exec("wrmsr -a 0x1a0 0x4000850089")
   else
     error("Cannot disable turbo: neither intel_pstate nor wrmsr are available.")
