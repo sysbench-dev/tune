@@ -1,0 +1,9 @@
+2018-10-23  Alexey Kopytov  <akopytov@gmail.com>
+
+	* Version 0.0.2.
+	* Fix a broken check for wrmsr availability.
+	* Add installation instructions to README.md.
+
+2018-04-23  Alexey Kopytov  <akopytov@gmail.com>
+
+	* Initial release 0.0.1.
