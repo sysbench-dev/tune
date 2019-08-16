@@ -1,4 +1,4 @@
--- Copyright (C) 2018 Alexey Kopytov <akopytov@gmail.com>
+-- Copyright (C) 2018-2019 Alexey Kopytov <akopytov@gmail.com>
 --
 -- This code is licensed under the MIT license, see LICENSE.
 
