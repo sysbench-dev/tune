@@ -68,17 +68,28 @@ local function disable_turbo()
     return true
   end
 
-  -- First try the intel_pstate method and resort to msr-tools if it is
-  -- unavailable
-  local no_turbo="/sys/devices/system/cpu/intel_pstate/no_turbo"
-  local f=io.open(no_turbo, "w")
+  -- First try the intel_pstate method
+  local f=io.open("/sys/devices/system/cpu/intel_pstate/no_turbo", "w")
   if f then
     f:write("1")
     f:close()
-  elseif pexec("which wrmsr > /dev/null 2>&1") then
+    return
+  end
+
+  -- Then try the acpi_cpufreq method
+  f=io.open("/sys/devices/system/cpu/cpufreq/boost", "w")
+  if f then
+     f:write("0")
+     f:close()
+     return
+  end
+
+  -- Now resort to msr-tools or fail
+  if pexec("which wrmsr > /dev/null 2>&1") then
     exec("wrmsr -a 0x1a0 0x4000850089")
   else
-    error("Cannot disable turbo: neither intel_pstate nor wrmsr are available.")
+     error("Cannot disable turbo: none of the intel_pstate, acpi_freq or " ..
+              "wrmsr methods are available.")
   end
 end
 
